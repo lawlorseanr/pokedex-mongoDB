@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const Pokemon = require('../database/index');
+
 const port = 8000;
 
 const server = express();

@@ -8,7 +8,6 @@ export default ({ pokemonList }) => {
       {_.map(pokemonList, (pokemon, i) => {
         return <Pokemon key={i} pokemon={pokemon}/>
       })}
-
     </div>
   )
 }
