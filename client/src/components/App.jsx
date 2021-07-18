@@ -1,6 +1,7 @@
 import React from 'react';
 import PokemonList from './PokemonList.jsx';
 import PokeDropdown from './PokeDropdown.jsx';
+import axios from 'axios';
 
 class App extends React.Component {
   constructor() {
@@ -13,6 +14,14 @@ class App extends React.Component {
       ],
       pokemon: []
     }
+  }
+
+  componentDidMount() {
+    axios.get('http://localhost:8000/api/pokemon')
+      .then(response => {
+        this.setState({ pokemon: response.data })
+      })
+      .catch(err => console.error(err));
   }
 
   render() {
